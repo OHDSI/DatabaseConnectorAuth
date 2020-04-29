@@ -40,7 +40,7 @@ NULL
 getAuthDllPath <- function() {
   platform <- R.Version()$platform
   path <- NULL
-  if (platform == "x86_64-w64-ming32") {
+  if (platform == "x86_64-w64-mingw32") {
     path = system.file("dll", "x64", package = "DatabaseConnectorAuth")
   }
   return(path)
