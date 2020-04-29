@@ -3,4 +3,7 @@
 \docType{package}
 \name{DatabaseConnectorAuth}
 \alias{DatabaseConnectorAuth}
-\title{DatabaseConnectorJars}
+\title{DatabaseConnectorAuth}
+\description{
+This package provides Windows integrated authenication DLL for \code{sqljdbc42}
+}

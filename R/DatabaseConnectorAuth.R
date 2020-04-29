@@ -16,17 +16,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#' DatabaseConnectorJars
+#' DatabaseConnectorAuth
+#'
+#' This package provides Windows integrated authenication DLL for \code{sqljdbc42}
 #'
 #' @docType package
 #' @name DatabaseConnectorAuth
 NULL
 
-# .onLoad <- function(libname, pkgname) {
-# }
+.onLoad <- function(libname, pkgname) {
+  path <- getAuthDllPath()
+  if (!is.null(path)) {
+    Sys.setenv("PATH_TO_AUTH_DLL" = path)
+  }
+}
 
+#' Get authenication DLL path for \code{sqljdbc42}
+#'
+#' This function returns the package path to the Windows integrated authenication DLL
+#' for \code{sqljbdc42}.
+#'
 #' @export
 getAuthDllPath <- function() {
-  path = system.file("dll", "x64", package = "DatabaseConnectorAuth")
+  platform <- R.Version()$platform
+  path <- NULL
+  if (platform == "x86_64-w64-ming32") {
+    path = system.file("dll", "x64", package = "DatabaseConnectorAuth")
+  }
   return(path)
 }
