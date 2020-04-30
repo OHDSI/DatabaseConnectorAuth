@@ -4,7 +4,7 @@ Title: Authenication Dependencies for the 'DatabaseConnector' Package
 Version: 0.9.0
 Date: 2020-04-29
 Authors@R: c(
-	  person("Marc", "Suchard", email = "msuchard@ucla.edu", role = c("aut", "cre")),
+	person("Marc", "Suchard", email = "msuchard@ucla.edu", role = c("aut", "cre")),
     person("Martijn", "Schuemie", role = c("aut")),
     person("Observational Health Data Science and Informatics", role = c("cph")),
     person("Microsoft Inc.", role = c("cph"), comment = "SQL Server JDBC driver")
